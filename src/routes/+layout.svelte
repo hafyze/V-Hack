@@ -1,17 +1,17 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
 </script>
 
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-
 		<!-- TO EDIT -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl uppercase variant-filled-primary rounded-3xl p-2">V Hack</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
@@ -38,6 +38,8 @@
 				>
 					GitHub
 				</a>
+				
+				<LightSwitch />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
