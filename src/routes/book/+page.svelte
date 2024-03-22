@@ -4,57 +4,68 @@
 
 </script>
 <div class=" w-full p-8">
-    <span class="h1">Financial Articles</span>
+    <span class="h1">Book Recommendations</span>
 </div>
 
 <div class="w-full h-full flex items-center flex-col">
     <!-- ITEM 1 -->
     <span class="horizontalLine my-12"/>
-    <div class="flex flex-row px-32">
-        <div class="flex flex-col basis-4/5 justify-center">
-            <div>
-                <span>
-                    20/3/2024 
-                </span>
-                <span class="badge variant-filled ml-2 rounded-sm">Member Only</span>
-            </div>
-            <span class="text-4xl py-4 font-bold">
-                Equity Crowdfunding Malaysia
-            </span>
-            <p class="pt-2 mr-5">
-                The Securities Commission (SC) made equity crowdfunding legal in Malaysia in 2015 but only through approved operators. pitchIN is a Registered Market Operator (RMO) approved by the Securities Commission to offer equity crowdfunding. The laws governing equity crowdfunding in Malaysia is the Guidelines on Recognized Markets (‘ECF Guidelines’) issued by the SC.
-            </p>
-            <button type="button" class="btn variant-filled w-48 mt-12" on:click={() => {goto("/articles/crowdfunding")}}>Read More</button>
+    <div class="flex flex-row px-32 gap-8">
+        <div class="items-center">
+            <img class="h-72 w-auto rounded-lg basis-1/5" src="/src/lib/atomicHabits.webp" alt="">
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg basis-1/5" src="/src/lib/equityCrowdfunding.png" alt="">
+        <div class="flex flex-col basis-4/5 align-start">
+            <span class="text-2xl py-4 font-bold">
+                Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones 
+            </span>
+            <p class="pt-2">
+                Atomic Habits will reshape the way you think about progress and success, and give you the tools and strategies you need to transform your habits--whether you are a team looking to win a championship, an organization hoping to redefine an industry, or simply an individual who wishes to quit smoking, lose weight, reduce stress, or achieve any other goal.
+            </p>
+            <a target="_blank" href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299">
+                <button type="button" class="btn variant-filled w-48 mt-12">Shop Now</button>
+            </a>
         </div>
     </div>
     <!-- END ITEM 1 -->
     <!-- ITEM 2 -->
     <span class="horizontalLine my-12"/>
-    <div class="flex flex-row px-32">
-        <div class="flex flex-col basis-4/5 justify-center">
-            <div>
-                <span>
-                    20/3/2024 
-                </span>
-                <span class="badge variant-filled ml-2 rounded-sm">Member Only</span>
-            </div>
-            <span class="text-4xl py-4 font-bold">
-                Equity Crowdfunding Malaysia
-            </span>
-            <p class="pt-2 mr-5">
-                The Securities Commission (SC) made equity crowdfunding legal in Malaysia in 2015 but only through approved operators. pitchIN is a Registered Market Operator (RMO) approved by the Securities Commission to offer equity crowdfunding. The laws governing equity crowdfunding in Malaysia is the Guidelines on Recognized Markets (‘ECF Guidelines’) issued by the SC.
-            </p>
-            <button type="button" class="btn variant-filled w-48 mt-12" on:click={() => {goto("/articles/crowdfunding")}}>Read More</button>
+    <div class="flex flex-row px-32 gap-8">
+        <div class="items-center">
+            <img class="h-72 w-auto rounded-lg basis-1/5" src="/src/lib/rdpd.jpg" alt="">
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg basis-1/5" src="/src/lib/equityCrowdfunding.png" alt="">
+        <div class="flex flex-col basis-4/5 align-start">
+            <span class="text-2xl py-4 font-bold">
+                Rich Dad Poor Dad
+            </span>
+            <p class="pt-2">
+                Rich Dad Poor Dad is a 1997 book written by Robert T. Kiyosaki and Sharon Lechter. It advocates the importance of financial literacy, financial independence and building wealth through investing in assets, real estate investing, starting and owning businesses, as well as increasing one's financial intelligence.
+            </p>
+            <a target="_blank" href="https://www.amazon.com/Rich-Dad-Poor-Teach-Middle/dp/1612680194">
+                <button type="button" class="btn variant-filled w-48 mt-12">Shop Now</button>
+            </a>
         </div>
     </div>
     <!-- END ITEM 2 -->
-
+    <!-- ITEM 3 -->
+    <span class="horizontalLine my-12"/>
+    <div class="flex flex-row px-32 gap-8">
+        <div class="items-center">
+            <img class="h-72 w-auto rounded-lg basis-1/5" src="/src/lib/flr.jpeg" alt="">
+        </div>
+        <div class="flex flex-col basis-4/5 align-start">
+            <span class="text-2xl py-4 font-bold">
+                ADVANCING FINANCIAL LITERACY AND RESILIENCE IN POST-PANDEMIC MALAYSIA
+            </span>
+            <p class="pt-2">
+                
+The COVID-19 crisis has heightened financial challenges in Malaysia, emphasizing the need for improved financial literacy. "Advancing Financial Literacy and Resilience in Post-Pandemic Malaysia" addresses these issues, aiming to empower individuals with the knowledge needed for informed financial decisions, ultimately fostering greater financial resilience.
+            </p>
+            <a target="_blank" href="https://www.umpress.com.my/index.php?route=product/product&product_id=968">
+                <button type="button" class="btn variant-filled w-48 mt-12">Shop Now</button>
+            </a>
+        </div>
+    </div>
+    <!-- END ITEM 3 -->
 </div>
 
 <style>
