@@ -2,55 +2,66 @@
     import { onMount } from 'svelte';
   
     interface Card {
-        title: string
-        location: string
-        date: string
-        eventNumber: number
+        title: string;
+        location: string;
+        topic: string;
+        date: string;
+        eventNumber: number;
     }
   
     let cards: Card[] = [
-        { title: "Investing 101: How to start", location: "Cyberjaya, Selangor", date: "1/4/2024", eventNumber: 1},
-        { title: "Islamic Trading Principles", location: "Cyberjaya, Selangor", date: "2/4/2024", eventNumber: 2},
-        { title: "Guide on starting a Business", location: "Puchong, Selangor", date: "5/4/2024", eventNumber: 3}
+        { title: "Investing 101: How to start", location: "Cyberjaya, Selangor", topic: "Business", date: "1/4/2024", eventNumber: 1},
+        { title: "Islamic Trading Principles", location: "Cyberjaya, Selangor", topic: "Budget", date: "2/4/2024", eventNumber: 2},
+        { title: "Guide on starting a Business", location: "Puchong, Selangor", topic: "Business", date: "5/4/2024", eventNumber: 3}
     ];
   
-    let filteredCards: Card[] = []
-    let searchValue: string = ''
+    let filteredCards: Card[] = [];
+    let searchValue: string = "";
+    let selectedTopic: string = "";
   
     function filterCards() {
         filteredCards = cards.filter(card =>
-            card.location.toLowerCase().includes(searchValue.toLowerCase())
+            (card.location.toLowerCase().includes(searchValue.toLowerCase()) || searchValue === "") &&
+            (card.topic === selectedTopic || selectedTopic === '')
         );
     }
 
+    function resetFilters() {
+        searchValue = "";
+        selectedTopic = "";
+        filterCards();
+    }
+
     function getImage(eventNumber: number): string {
-        return `src/lib/event${eventNumber}.jpg`
+        return `src/lib/event${eventNumber}.jpg`;
     }
   
     onMount(() => {
-        filteredCards = [...cards]
+        filteredCards = [...cards];
     });
 </script>
   
 <!-- EVENTS -->
 <div class="flex items-center justify-center"> 
-        <h1 class="my-4 text-3xl"><strong>Upcoming Events</strong></h1>
-    </div>
-    <!-- Search Section -->
-    <div class="flex items-center justify-center">
+    <h1 class="my-4 text-3xl"><strong>Upcoming Events</strong></h1>
+</div>
+<!-- Search Section -->
+<div class="flex items-center justify-center">
     <label class="label">
-      <input bind:value={searchValue} on:input={filterCards} class="input w-full md:w-72 mr-4" type="text" placeholder="Enter a city or region" />
+        <input bind:value={searchValue} on:input={filterCards} class="input w-full md:w-72 mr-4" type="text" placeholder="Enter a city or region" />
     </label>
     
     <label class="label">
-      <select class="select" placeholder="Event Topics">
-        <option value="0" disabled selected>Event Topics</option>
-        <option value="1">Takaful</option>
-        <option value="2">Suku</option>
-        <option value="3">Budget</option>
-        <option value="4">Business</option>
-      </select>
+        <select bind:value={selectedTopic} on:change={filterCards} class="select">
+            <option value="" disabled selected>Event Topics</option>
+            <option value="Takaful">Takaful</option>
+            <option value="Suku">Suku</option>
+            <option value="Budget">Budget</option>
+            <option value="Business">Business</option>
+        </select>
     </label>
+
+    <button class="btn variant-filled-secondary ml-2" on:click={resetFilters}>Reset</button>
 </div>
   
 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 m-10">
@@ -65,4 +76,3 @@
          </a>
     {/each}
 </div>
-  
