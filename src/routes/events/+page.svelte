@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
   
     interface Card {
@@ -35,6 +36,11 @@
     function getImage(eventNumber: number): string {
         return `src/lib/event${eventNumber}.jpg`;
     }
+
+    function handleCardClick(card: Card) {
+        const url = `events/details?title=${card.title}&location=${card.location}&topic=${card.topic}&date=${card.date}&eventNumber=${card.eventNumber}`;
+        goto(url);
+    }
   
     onMount(() => {
         filteredCards = [...cards];
@@ -64,15 +70,17 @@
     <button class="btn variant-filled-secondary ml-2" on:click={resetFilters}>Reset</button>
 </div>
   
+<!-- EVENTS -->
 <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 m-10">
     {#each filteredCards as card}
-        <a href="/events/details" class="card card-hover text-center">
+        <a href="#top" on:click|preventDefault={() => handleCardClick(card)} class="card card-hover text-center">
             <img class="rounded-lg" src={getImage(card.eventNumber)} alt="">
             <p class="text-2xl m-2 font-semibold">{card.title}</p>
             <div class="flex card-footer">
                 <p class="flex-grow text-left">{card.location}</p>
                 <p class="text-right">{card.date}</p>
-            </div>          
+            </div>
          </a>
     {/each}
 </div>
+
