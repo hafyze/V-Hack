@@ -1,24 +1,56 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
-    import { onMount } from 'svelte';
+    import { goto } from '$app/navigation'
+    import { onMount } from 'svelte'
   
     interface Card {
-        title: string;
-        location: string;
-        topic: string;
-        date: string;
-        eventNumber: number;
+        title: string
+        location: string
+        topic: string
+        date: string
+        time: string
+        venue: string
+        price: number
+        eventNumber: number
+        details: string
     }
   
     let cards: Card[] = [
-        { title: "Investing 101: How to start", location: "Cyberjaya, Selangor", topic: "Business", date: "1/4/2024", eventNumber: 1},
-        { title: "Islamic Trading Principles", location: "Cyberjaya, Selangor", topic: "Budget", date: "2/4/2024", eventNumber: 2},
-        { title: "Guide on starting a Business", location: "Puchong, Selangor", topic: "Business", date: "5/4/2024", eventNumber: 3}
+        { 
+            title: "Investing 101: How to start", 
+            location: "Cyberjaya, Selangor", 
+            topic: "Business", 
+            date: "1/4/2024", 
+            time: "10:30AM",
+            venue: "Cyberview", 
+            price: 30, 
+            eventNumber: 1,
+            details: "This workshop aims to provide participants with fundamental knowledge and practical strategies to start investing wisely and build long-term wealth. Whether you are a complete beginner or looking to refine your investment skills, this workshop will equip you with the tools and confidence to make informed financial decisions."
+        },{ 
+            title: "Islamic Trading Principles", 
+            location: "Cyberjaya, Selangor", 
+            topic: "Budget", 
+            date: "2/4/2024", 
+            time: "9:30AM", 
+            venue: "(Hybrid) Cyberview and Google Meet", 
+            price: 0, 
+            eventNumber: 2,
+            details: "This workshop aims to provide participants with a comprehensive understanding of Islamic finance principles and ethical trading practices in accordance with Shariah law. Participants will learn about the core tenets of Islamic finance, the concept of Halal and Haram in investments, and practical strategies for creating a Shariah-compliant investment portfolio."
+        },{ 
+            title: "Guide on starting a Business", 
+            location: "Puchong, Selangor", 
+            topic: "Business", 
+            date: "5/4/2024", 
+            time: "8:00AM", 
+            venue: "Dewan Awam Puchong", 
+            price: 10, 
+            eventNumber: 3,
+            details: "This workshop is designed for aspiring entrepreneurs and individuals interested in starting their own businesses. Participants will learn the key steps involved in launching a business, from refining their business idea to developing a solid business plan, securing funding, and navigating legal and operational aspects."
+        }
     ];
   
-    let filteredCards: Card[] = [];
-    let searchValue: string = "";
-    let selectedTopic: string = "";
+    let filteredCards: Card[] = []
+    let searchValue: string = ""
+    let selectedTopic: string = ""
   
     function filterCards() {
         filteredCards = cards.filter(card =>
@@ -38,7 +70,7 @@
     }
 
     function handleCardClick(card: Card) {
-        const url = `events/details?title=${card.title}&location=${card.location}&topic=${card.topic}&date=${card.date}&eventNumber=${card.eventNumber}`;
+        const url = `events/details?title=${card.title}&location=${card.location}&topic=${card.topic}&date=${card.date}&time=${card.time}&venue=${card.venue}&price=${card.price}&eventNumber=${card.eventNumber}&details=${card.details}`;
         goto(url);
     }
   

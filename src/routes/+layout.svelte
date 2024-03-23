@@ -1,8 +1,14 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, Toast } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+	import { initializeStores } from '@skeletonlabs/skeleton';
+
+	initializeStores();
+
 </script>
+
+<Toast />
 
 <!-- App Shell -->
 <AppShell>
