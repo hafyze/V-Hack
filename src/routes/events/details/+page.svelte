@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {getToastStore} from '@skeletonlabs/skeleton'
+    import {getToastStore, type ToastSettings} from '@skeletonlabs/skeleton'
 
     let card = {
       title: '',
@@ -11,15 +11,15 @@
       price: '',
       eventNumber: 0,
       details: ''
-    };
+    }
   
-    const url = new URL(window.location.href);
+    const url = new URL(window.location.href)
     
-    const titleParam = url.searchParams.get("title");
-    const locationParam = url.searchParams.get("location");
-    const topicParam = url.searchParams.get("topic");
-    const dateParam = url.searchParams.get("date");
-    const eventNumberParam = url.searchParams.get("eventNumber");
+    const titleParam = url.searchParams.get("title")
+    const locationParam = url.searchParams.get("location")
+    const topicParam = url.searchParams.get("topic")
+    const dateParam = url.searchParams.get("date")
+    const eventNumberParam = url.searchParams.get("eventNumber")
     const timeParam = url.searchParams.get("time")
     const venueParam = url.searchParams.get("venue")
     const priceParam = url.searchParams.get("price")
@@ -38,10 +38,10 @@
     };
 
     function getImage(eventNumber: number): string {
-        return `/src/lib/event${card.eventNumber}.jpg`;
+        return `/src/lib/event${card.eventNumber}.jpg`
     }
 
-    const toastStore = getToastStore();
+    const toastStore = getToastStore()
     
     
     function buttonClick(){
@@ -53,8 +53,8 @@
     }
 
     function copyClipBoard(event: MouseEvent) {
-        const target = event.currentTarget as HTMLTableRowElement;
-        const rowData = target.textContent?.trim() || '';
+        const target = event.currentTarget as HTMLTableRowElement
+        const rowData = target.textContent?.trim() || ''
         
         navigator.clipboard.writeText(rowData).then(() => {
             const toast: ToastSettings = {
@@ -67,7 +67,7 @@
     }
 </script>
 
-<div class=" m-6">
+<div class="text-center m-6">
     <div class="text">
         <h1 class="lg:ml-10 mb-6 text-4xl font-bold ">{card.title}</h1>
     </div>
