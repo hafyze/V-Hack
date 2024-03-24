@@ -3,7 +3,7 @@
   import { goto } from "$app/navigation";
 
 </script>
-<div class=" w-full p-8">
+<div class=" w-full p-8 pb-0">
     <span class="h1">Financial Articles</span>
 </div>
 
