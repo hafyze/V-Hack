@@ -69,15 +69,15 @@
 
 <div class="text-center m-6">
     <div class="text">
-        <h1 class="lg:ml-10 mb-6 text-4xl font-bold ">{card.title}</h1>
+        <h1 class="lg:ml-10 mb-6 text-4xl font-bold">{card.title}</h1>
     </div>
     <hr class="!border-t-4" />
 
-    <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col lg:flex-row justify-center align-middle">
         <div class="lg:w-1/2 ml-10 mt-6">
             <img class="rounded-lg w-full" src={getImage(card.eventNumber)} alt="">
         </div>
-        <div class="lg:w-1/2 lg:ml-10 mt-6 max-w-72 !sm: ml-10">
+        <div class="lg:w-1/2 lg:ml-10 mt-6 max-w-72 !sm:ml-10">
             <table class="table table-interactive table-compact">
                 <thead>
                     <tr class="table-row-checked">
@@ -85,10 +85,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr on:click={copyClipBoard} title="Click to copy"  style="cursor: copy;"><td>Date: {card.date}</td></tr>
-                    <tr on:click={copyClipBoard} title="Click to copy"  style="cursor: copy;"><td>Time: {card.time}</td></tr>
-                    <tr on:click={copyClipBoard} title="Click to copy"  style="cursor: copy;"><td>Venue: {card.venue}</td></tr>
-                    <tr on:click={copyClipBoard} title="Click to copy"  style="cursor: copy;"><td>Price: RM {card.price}</td></tr>
+                    <tr on:click={copyClipBoard} title="Click to copy" style="cursor: copy;"><td>Date: {card.date}</td></tr>
+                    <tr on:click={copyClipBoard} title="Click to copy" style="cursor: copy;"><td>Time: {card.time}</td></tr>
+                    <tr on:click={copyClipBoard} title="Click to copy" style="cursor: copy;"><td>Venue: {card.venue}</td></tr>
+                    <tr on:click={copyClipBoard} title="Click to copy" style="cursor: copy;"><td>Price: RM {card.price}</td></tr>
                 </tbody>
                 <tfoot class="text-center p-3 bg-variant-filled">
                     <button on:click={buttonClick} type="button" class="btn variant-filled m-3">Register</button>
@@ -97,8 +97,11 @@
         </div>
     </div>
 
-    <div class="ml-10 my-6 max-w-screen-sm">
-        <h1 class="text-3xl font-bold mt-3 mb-3">About This Event</h1>
-        <p>{card.details}</p>
+    <!-- Create a wrapper div for centering -->
+    <div class="mx-auto max-w-screen-sm">
+        <div class="text-center ml-2 my-6">
+            <h1 class="text-3xl font-bold mt-3 mb-3">About This Event</h1>
+            <p>{card.details}</p>
+        </div>
     </div>
 </div>

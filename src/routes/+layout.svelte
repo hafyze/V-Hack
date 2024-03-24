@@ -40,7 +40,7 @@
     }
 </script>
 
-
+<Toast />
 <!-- App Shell -->
 <!-- svelte-ignore a11y-invalid-attribute -->
 <AppShell>
