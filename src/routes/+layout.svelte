@@ -35,7 +35,7 @@
 				 
 				<!-- Navigation Links -->
 				<ul class="flex space-x-7">
-					<li><a href="#" class="text-main-color hover:text-third-color text-md font-bold">Tools</a></li>
+					<li><a href="/tools" class="text-main-color hover:text-third-color text-md font-bold">Tools</a></li>
 					<li><a href="#" class="text-main-color hover:text-third-color text-md font-bold">Learn</a></li>
 					<li><a href="/events" class="text-main-color hover:text-third-color text-md font-bold">Event</a></li>
 					<li class="relative">
