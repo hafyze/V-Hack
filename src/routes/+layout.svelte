@@ -49,7 +49,7 @@
 							</ul>
 						{/if}
 					</li>
-					<li><a href="#" class="text-main-color hover:text-third-color text-md font-bold">Pricing</a></li>
+					<li><a href="/subscription" class="text-main-color hover:text-third-color text-md font-bold">Pricing</a></li>
 				</ul>
 
 			  	<!-- Add Navigation for Register and Login --> 

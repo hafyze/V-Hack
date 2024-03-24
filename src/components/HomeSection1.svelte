@@ -8,7 +8,7 @@
         <div class="self-center">
             <h4 class="text-black font-bold text-xl">Budget Calculator</h4>
             <p class="text-black my-4">A budget calculator is a tool that tracks income and expenses to help manage finances effectively. By inputting financial data, users can create a budget plan tailored to their needs and goals.</p>
-            <ButtonLike>Budget Calculator</ButtonLike>
+            <ButtonLike hrefLink='/tools'>Budget Calculator</ButtonLike>
         </div>
     </div>
 </div>
